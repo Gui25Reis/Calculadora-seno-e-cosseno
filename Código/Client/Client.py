@@ -10,7 +10,7 @@ __license__ = " "
 ## Bibliotecas necessárias:
 
 # Arquivo local:
-from AuxWidgets import AuxWidgets
+from Client.AuxWidgets import AuxWidgets
 
 
 # GUI:
@@ -59,7 +59,7 @@ class Client(QMainWindow, AuxWidgets):
         self.txtLog = self.txtView(20, 90, 200, 120, self.root)                # Cria a área de vizualização de texto
         self.txtLog.setText('Ative o server clicando no botão "ativar".')               # Define o texto inicial
 
-        self.btAtiv:QPushButton = self.bts("Ativar", 80, 225, 75, 23, self.root)            # Cria o botão (Ler PLanílha | Ativar | Atualizar)
+        self.btAtiv:QPushButton = self.bts("Calcular", 80, 225, 75, 23, self.root)            # Cria o botão (Ler PLanílha | Ativar | Atualizar)
         self.btAtiv.clicked.connect(self.btAction)
 
         txt = "v1.0 (09/21)\nCOPYRIGHT © 2021 KINGS"

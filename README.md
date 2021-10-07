@@ -3,7 +3,7 @@
 <!-- ![Tamanho](https://img.shields.io/badge/size-75%20MB-blue) -->
 ![Plataformas](https://img.shields.io/badge/plataforma-Windows-lightgrey?logo=windows)
 [![Versão python](https://img.shields.io/badge/python-v3.8.5-blue?logo=python)](https://www.python.org/downloads/release/python-385/)
-[![Licença](https://img.shields.io/badge/license-GNU-3-brightgreen?)](https://github.com/Gui25Reis/Prova-P1-Calculadora-seno-e-cosseno/blob/master/LICENSE)
+[![Licença](https://img.shields.io/badge/license-GNU3-brightgreen?)](https://github.com/Gui25Reis/Prova-P1-Calculadora-seno-e-cosseno/blob/master/LICENSE)
 
 
 Prova P1 da matéria de Computação distribuída.

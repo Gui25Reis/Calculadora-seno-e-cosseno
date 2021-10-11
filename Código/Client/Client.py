@@ -3,15 +3,14 @@
 __author__ = "Gui Reis"
 __copyright__ = "COPYRIGHT © 2021 KINGS"
 __version__ = "1.0"
-__status__ = "Production"
-__license__ = " "
+__status__ = "Entregue"
+__license__ = "https://github.com/Gui25Reis/Prova-P1-Calculadora-seno-e-cosseno/blob/main/LICENSE"
 
 
 ## Bibliotecas necessárias:
 
 # Arquivo local:
 from Client.AuxWidgets import AuxWidgets
-
 
 # GUI:
 from PyQt5.QtWidgets import QMainWindow, QWidget, QRadioButton, QPushButton
@@ -25,7 +24,23 @@ URL = "http://192.168.15.73:5000/"
 
 
 class Client(QMainWindow, AuxWidgets):
-    ## Construtor: Cria a janela principal com o menu e o local onde vai ser colocado as páginas
+    r"""
+    Classe para criação da interface gráfica.
+
+    Overview
+    --------
+    Nessa classe é criado os componentes da interface gráfica e também
+    a execução da lógica onde pega os dados que vão ser recebidos da api
+    SeriesServer.
+
+    Métodos
+    -------
+    ``gui_Ui() -> None`` - Cria os componentes da interface.
+
+    ``setTxt(t_:str) -> None`` - Define o texto mostrado na text view.
+    
+    ``btAction() -> None`` - Ação do botão calcular.
+    """  
     def __init__(self) -> None:
         super(Client, self).__init__()
 
@@ -44,37 +59,42 @@ class Client(QMainWindow, AuxWidgets):
 
         
     def gui_Ui(self) -> None:
-        lblAng = self.lbl("Ângulo: ", 12, 20, 20, 60, 20, self.root)
+        r"""Cria os componentes da interface."""
+        self.lbl("Ângulo: ", 12, 20, 20, 60, 20, self.root)
         self.angInput = self.lineEdit(10, 95, 20, 120, 20, self.root)
 
-        self.senOpt = QRadioButton("Seno", self.root)                           # Cria a opção de Idioma
-        self.senOpt.setGeometry(QtCore.QRect(20, 60, 75, 18))                   # Define a posição
+        self.senOpt = QRadioButton("Seno", self.root)
+        self.senOpt.setGeometry(QtCore.QRect(20, 60, 75, 18))
         self.senOpt.setFont(QFont('Arial', 12, 50))
-        self.senOpt.setChecked(True)                                            # Deixa marcado como padrão
+        self.senOpt.setChecked(True)
         
-        self.cosOpt = QRadioButton("Cosseno", self.root)                        # Cria a opção de Idioma
-        self.cosOpt.setGeometry(QtCore.QRect(125, 60, 90, 18))                  # Define a posição
+        self.cosOpt = QRadioButton("Cosseno", self.root)
+        self.cosOpt.setGeometry(QtCore.QRect(125, 60, 90, 18))
         self.cosOpt.setFont(QFont('Arial', 12, 50))
         
-        self.txtLog = self.txtView(20, 90, 200, 120, self.root)                # Cria a área de vizualização de texto
-        self.txtLog.setText('Ative o server clicando no botão "ativar".')               # Define o texto inicial
+        self.txtLog = self.txtView(20, 90, 200, 120, self.root)
+        self.txtLog.setText('Ative o server clicando no botão "ativar".')
 
-        self.btAtiv:QPushButton = self.bts("Calcular", 80, 225, 75, 23, self.root)            # Cria o botão (Ler PLanílha | Ativar | Atualizar)
+        self.btAtiv:QPushButton = self.bts("Calcular", 80, 225, 75, 23, self.root)
         self.btAtiv.clicked.connect(self.btAction)
 
-        txt = "v1.0 (09/21)\nCOPYRIGHT © 2021 KINGS"
+        txt = "v1.0 (10/21)\nCOPYRIGHT © 2020 KINGS"
         copyright = self.lbl(txt, 8, 20, 260, 190, 30, self.root)
         copyright.setFont(QFont('Arial', 8, 75))
         
     
-    ## Método especial: define o texto
-    def setTxt(self, t_:str) -> None: 
+    def setTxt(self, t_:str) -> None:
+        r"""Define o texto mostrado na text view.
+
+        ### Parameters
+            ``t_``: str -- texto que vai ser adidionado.
+        """
         text = t_ + "\n" + self.txtLog.toPlainText()
         self.txtLog.setText(text)
     
 
-    ## Método: ação do botão
     def btAction(self) -> None:
+        r"""Ação do botão calcular: faz a chamda da api e adiciona na text view o resultado."""
         try:
             if self.erro:
                 self.txtLog.setText("")
@@ -84,17 +104,20 @@ class Client(QMainWindow, AuxWidgets):
             ang_type:str = self.opcChecked()
             data = get(URL, params={"ang":entrada, "ang_type":ang_type})
 
-            tipo = "Seno" if ang_type == "sen" else "Cosseno"
+            tipo:str = "Seno" if ang_type == "sen" else "Cosseno"
             self.setTxt(f"{tipo} de {entrada}: {data.text[:7]}\n")
             
         except:
-            self.txtLog.setText("Houve um erro. Tente colocar um número inteiro na entrada, caso o erro pesrsita há um problema com a conexão com os servers.")
+            erro_txt:str = "Houve um erro. Tente colocar um número inteiro na entrada, caso o erro pesrsita há um problema com a conexão com os servers."
+            self.txtLog.setText(erro_txt)
             self.erro = True
             self.angInput.setText("")
 
 
-    ## Método: Verifica a opção selecionada da linguegem
     def opcChecked(self) -> str:
-        if self.senOpt.isChecked():                                               # Verifica se "Português-Brazil" está marcado
-            return "sen"                                                                # 1 -> Português-Brazil
-        return "cos"                                                                    # 0 -> English
+        r"""Verifica qual opção foi selecionada.
+
+        ### Return
+            ``str`` -- string que relaciona com a opção selecionada.
+        """
+        return "sen" if self.senOpt.isChecked() else "cos"

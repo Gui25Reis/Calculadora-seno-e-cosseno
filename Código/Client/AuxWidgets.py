@@ -3,12 +3,11 @@
 __author__ = "Gui Reis"
 __copyright__ = "COPYRIGHT © 2021 KINGS"
 __version__ = "1.0"
-__status__ = "Production"
-__license__ = " "
+__status__ = "Entregue"
+__license__ = "https://github.com/Gui25Reis/Prova-P1-Calculadora-seno-e-cosseno/blob/main/LICENSE"
 
 
 ## Bibliotecas necessárias:
-# GUI:
 from PyQt5.QtWidgets import QLabel, QPushButton, QGroupBox, QLineEdit, QTextBrowser, QWidget
 from PyQt5.QtGui import QFont
 from PyQt5.QtCore import Qt
@@ -33,55 +32,32 @@ class AuxWidgets:
 
     Métodos
     -------
-    lbl(self, txt_:str, tam_:int, p1_:int, p2_:int, p3_:int, p4_:int,wid_:QWidget) -> QLabel
-        cria uma label personalizada
-    
-    bts(self, txt_:str, p1_:int, p2_:int, p3_:int, p4_:int, wid_:QWidget) -> QPushButton
-        cria um botão personalizada
-       
-    lineEdit(self, tam_:int, p1_:int, p2_:int, p3_:int, p4_:int, wid_:QWidget) -> QLineEdit
-        cria uma linha de texto personalizada
-    
-    txtView(self, p1_:int, p2_:int, p3_:int, p4_:int, wid_:QWidget) -> QTextBrowser
-        cria uma caixa de texto personalizada
+    ``lbl(self, txt_:str, tam_:int, p1_:int, p2_:int, p3_:int, p4_:int,wid_:QWidget) -> QLabel`` - cria uma label personalizada
 
-    gBox(self, n_:str, p1_:int, p2_:int, p3_:int, p4_:int, wid_:QWidget) -> QGroupBox
-        cria um grupo personalizado
+    ``bts(self, txt_:str, p1_:int, p2_:int, p3_:int, p4_:int, wid_:QWidget) -> QPushButton`` - cria um botão personalizada
+    
+    ``lineEdit(self, tam_:int, p1_:int, p2_:int, p3_:int, p4_:int, wid_:QWidget) -> QLineEdit`` - cria uma linha de texto personalizada
+    
+    ``txtView(self, p1_:int, p2_:int, p3_:int, p4_:int, wid_:QWidget) -> QTextBrowser`` - cria uma caixa de texto personalizada
 
-    btCopiar_action(self, w_:QTextBrowser) -> None
-        define a ação do botão de copiar
-    """        
+    ``gBox(self, n_:str, p1_:int, p2_:int, p3_:int, p4_:int, wid_:QWidget) -> QGroupBox`` - cria um grupo personalizado
+    """         
     
 
     def lbl(self, txt_:str, tam_:int, p1_:int, p2_:int, p3_:int, p4_:int, wid_:QWidget) -> QLabel:
-        r"""Cria as labels personalizadas
+        r"""Cria as labels personalizadas.
 
-        Parâmetros
-        ----------
-        txt_ : str
-            texto da label
-        
-        tam_ : int
-            tamanho da fonte
+        ### Parameters
+            ``txt_``: str -- texto da label. \
+            ``tam_``: int -- tamanho da fonte. \
+            ``p1_``: int -- posição X. \
+            ``p2_``: int -- posição Y. \
+            ``p3_``: int -- tamanho da largura. \
+            ``p4_``: int -- tamanho da altura. \
+            ``wid_``: QWidget -- widget em que vai ser colocado.
 
-        p1_ : int
-            posição X
-        
-        p2_ : int
-            posição Y
-        
-        p3_ : int
-            tamanho da largura
-        
-        p4_ : int
-            tamanho da altura
-        
-        wid_ : QWidget
-            widget pai do objeto gerado
-
-        Retorno
-        ------
-        Label perzonalizada a partir dos parâmetros passados.
+        ### Return
+            ``QLabel`` -- Label personalizada.
         """
         lb = QLabel(txt_, wid_)
         lb.setGeometry(p1_, p2_, p3_, p4_)
@@ -92,31 +68,19 @@ class AuxWidgets:
     
     
     def bts(self, txt_:str, p1_:int, p2_:int, p3_:int, p4_:int, wid_:QWidget) -> QPushButton:
-        r"""Cria as labels personalizadas
+        r"""Cria botões personalizadas.
 
-        Parâmetros
-        ----------
-        txt_ : str
-            texto da label
+        ### Parameters
+        ``txt_`` : str -- texto da label \
+        ``tam_`` : int -- tamanho da fonte \
+        ``p1_`` : int -- posição X \
+        ``p2_`` : int -- posição Y \
+        ``p3_`` : int -- tamanho da largura \
+        ``p4_`` : int -- tamanho da altura \
+        ``wid_`` : QWidget -- widget em que vai ser colocado 
 
-        p1_ : int
-            posição X
-        
-        p2_ : int
-            posição Y
-        
-        p3_ : int
-            tamanho da largura
-        
-        p4_ : int
-            tamanho da altura
-        
-        wid_ : QWidget
-            widget pai do objeto gerado
-
-        Retorno
-        ------
-        Botão perzonalizado a partir dos parâmetros passados.
+        ### Return
+        ``QPushButton`` -- Botão perzonalizado a partir dos Parameters passados.
         """
         bt = QPushButton(txt_, wid_)
         bt.setGeometry(p1_, p2_, p3_, p4_)
@@ -125,31 +89,18 @@ class AuxWidgets:
     
 
     def lineEdit(self, tam_:int, p1_:int, p2_:int, p3_:int, p4_:int, wid_:QWidget) -> QLineEdit:
-        r"""Cria as linhas de texto personalizadas
+        r"""Cria as linhas de texto personalizadas.
 
-        Parâmetros
-        ----------        
-        tam_ : int
-            tamanho da fonte
+        ### Parameters
+        ``tam_`` : int -- tamanho da fonte \
+        ``p1_`` : int -- posição X \
+        ``p2_`` : int -- posição Y \
+        ``p3_`` : int -- tamanho da largura \
+        ``p4_`` : int -- tamanho da altura \
+        ``wid_`` : QWidget -- widget em que vai ser colocado
 
-        p1_ : int
-            posição X
-        
-        p2_ : int
-            posição Y
-        
-        p3_ : int
-            tamanho da largura
-        
-        p4_ : int
-            tamanho da altura
-        
-        wid_ : QWidget
-            widget pai do objeto gerado
-
-        Retorno
-        ------
-        Linha de texto perzonalizada a partir dos parâmetros passados.
+        ### Return
+        ``QLineEdit`` -- Linha de texto perzonalizada a partir dos Parameters passados.
         """
         le = QLineEdit(wid_)
         le.setGeometry(p1_, p2_, p3_, p4_)
@@ -160,28 +111,17 @@ class AuxWidgets:
     
 
     def txtView(self, p1_:int, p2_:int, p3_:int, p4_:int, wid_:QWidget) -> QTextBrowser:
-        r"""Cria as caixas de texto personalizadas
+        r"""Cria as caixas de texto personalizadas.
 
-        Parâmetros
-        ----------
-        p1_ : int
-            posição X
-        
-        p2_ : int
-            posição Y
-        
-        p3_ : int
-            tamanho da largura
-        
-        p4_ : int
-            tamanho da altura
-        
-        wid_ : QWidget
-            widget pai do objeto gerado
+        ### Parameters
+        ``p1_`` : int -- posição X \
+        ``p2_`` : int -- posição Y \
+        ``p3_`` : int -- tamanho da largura \
+        ``p4_`` : int -- tamanho da altura \
+        ``wid_`` : QWidget -- widget em que vai ser colocado
 
-        Retorno
-        ------
-        Caixa de texto perzonalizada a partir dos parâmetros passados.
+        ### Return
+        ``QTextBrowser`` -- Caixa de texto perzonalizada a partir dos Parameters passados.
         """
         tv = QTextBrowser(wid_)
         tv.setGeometry(p1_, p2_, p3_, p4_)
@@ -190,49 +130,20 @@ class AuxWidgets:
 
 
     def gBox(self, txt_:str, p1_:int, p2_:int, p3_:int, p4_:int, wid_:QWidget) -> QGroupBox:
-        r"""Cria os grupos personalizadas
+        r"""Cria as áreas de vizualização de gráfico personalizadas.
 
-        Parâmetros
-        ----------
-        txt_ : str
-            título do grupo
-    
-        p1_ : int
-            posição X
-        
-        p2_ : int
-            posição Y
-        
-        p3_ : int
-            tamanho da largura
-        
-        p4_ : int
-            tamanho da altura
-        
-        wid_ : QWidget
-            widget pai do objeto gerado
+        ### Parameters
+        ``p1_`` : int -- posição X \
+        ``p2_`` : int -- posição Y \
+        ``p3_`` : int -- tamanho da largura \
+        ``p4_`` : int -- tamanho da altura \
+        ``wid_`` : QWidget -- widget em que vai ser colocado
 
-        Retorno
-        ------
-        Grupos perzonalizada a partir dos parâmetros passados.
+        ### Return
+        ``QGraphicsView`` -- Área de vizualização de gráfico perzonalizada a partir dos Parameters passados.
         """
         gb = QGroupBox(txt_, wid_)
         gb.setGeometry(p1_, p2_, p3_, p4_)
         gb.setFont(QFont('Arial', 12))
         gb.setStyleSheet("QGroupBox {border: 1px solid brown;}")
         return gb
-    
-
-    ##### OUTRAS FUNÇÕES #####
-
-
-    def btCopiar_action(self, w_:QTextBrowser) -> None:
-        r"""Ação de botão para cópia de texto
-        
-        Parâmetros
-        ----------
-        w_ : str
-            widget que vai ter o texto selecionado e copiado
-        """
-        w_.selectAll()
-        w_.copy()

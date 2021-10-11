@@ -3,8 +3,8 @@
 __author__ = "Gui Reis"
 __copyright__ = "COPYRIGHT © 2021 KINGS"
 __version__ = "1.0"
-__status__ = "Production"
-__license__ = " "
+__status__ = "Entregue"
+__license__ = "https://github.com/Gui25Reis/Prova-P1-Calculadora-seno-e-cosseno/blob/main/LICENSE"
 
 
 ## Bibliotecas necessárias:
@@ -16,11 +16,17 @@ appSeries = Flask(__name__)
 
 
 @appSeries.route('/', methods=['GET', 'POST'])
-def home():
+def home() -> str:
+    r"""Função principal que é executada assim que faz uma requisição.
+
+    ### Return:
+        ```str`` -- Ângulo seno/cosseno.
+    """
+
     ang:int = request.args.get('ang')
     ang_type:str = request.args.get('ang_type')
 
-    ang_rad = rad(int(ang))
+    ang_rad:float = rad(int(ang))
 
     if ang_type == "sen":
         return f"{sen(ang_rad)}"

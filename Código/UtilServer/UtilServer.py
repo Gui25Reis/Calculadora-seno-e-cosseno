@@ -3,8 +3,8 @@
 __author__ = "Gui Reis"
 __copyright__ = "COPYRIGHT © 2021 KINGS"
 __version__ = "1.0"
-__status__ = "Production"
-__license__ = " "
+__status__ = "Entregue"
+__license__ = "https://github.com/Gui25Reis/Prova-P1-Calculadora-seno-e-cosseno/blob/main/LICENSE"
 
 
 ## Bibliotecas necessárias:
@@ -17,6 +17,11 @@ appUtil = Flask(__name__)
 
 @appUtil.route('/', methods=['GET'])
 def home() -> dict:
+    r"""Função principal que é executada assim que faz uma requisição.
+
+    ### Return:
+        ```Dict[str:float]`` -- Dicionário com os resultados.
+    """
     try:
         fato = request.args.get('fat')
 
@@ -32,12 +37,12 @@ def home() -> dict:
             base = float(base)
             expo = float(expo)
 
-            conta = exp(base, expo)
+            conta:float = exp(base, expo)
             return {"exp":conta}
         
         # Fat  
         fato = int(fato)
-        conta = fat(fato)
+        conta:float = fat(fato)
         return {"fat":conta}
 
     except:

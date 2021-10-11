@@ -3,22 +3,18 @@
 __author__ = "Gui Reis"
 __copyright__ = "COPYRIGHT © 2021 KINGS"
 __version__ = "1.0"
-__status__ = "Production"
-__license__ = " "
+__status__ = "Entregue"
+__license__ = "https://github.com/Gui25Reis/Prova-P1-Calculadora-seno-e-cosseno/blob/main/LICENSE"
 
 
 ## Bibliotecas necessárias:
-# Arquivo local:
-from Client.Client import Client
 
-# Arquivo de sistema:
+from PyQt5.QtWidgets import QApplication
+from Client.Client import Client                # Arquivo local
 import sys
 
-# Arquivo da biblioteca de interface gráfica:
-from PyQt5.QtWidgets import QApplication
 
-## Função main
-if __name__ == "__main__":
+def main() -> None:
     app = QApplication(sys.argv)
     win = Client()
 
@@ -26,6 +22,5 @@ if __name__ == "__main__":
     sys.exit(app.exec_())
 
 
-# self.setWindowFlags(QtCore.Qt.WindowCloseButtonHint | QtCore.Qt.WindowMinimizeButtonHint )
-
-# pyinstaller.exe --onefile --windowed --noconsole --name='MC - Análise' --icon=images/logo-icone.ico main.py --version-file _versao.txt
+if __name__ == "__main__":
+    main()

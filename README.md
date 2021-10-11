@@ -6,16 +6,17 @@
 <!-- ![Tamanho](https://img.shields.io/badge/size-75%20MB-blue) -->
 
 
-Prova P1 da matéria de Computação distribuída: uma calculadora de seno e cosseno com dois servers distribuidos e um cliente com interface gráfica para colocar os dados.
+Prova P1 da matéria de Computação distribuída: uma calculadora de seno e cosseno com dois servers distribuídos e um cliente com interface gráfica para colocar os dados.
 
 1. [Instalação](#instalação)
 2. [Requerimentos](#requerimentos)
-3. [Licença](#licença)
-4. [Autor](#autor)
+3. [Documentação](#documentação)
+4. [Licença](#licença)
+5. [Autor](#autor)
 
 ## Instalação
 Baixando o repositório você consegue ter acesso ao código. Para executar o programa basta seguir esses passos:
-- Precisa pegar o IPV4 da sua máquina. Para fazer isso basta digitar o comando ```ipconfig``` no terminal.
+- Precisa pegar o IPV4 da sua máquina pois link onde as aplicações Flask vão rodar se baseiam no IPV4 (o uso do localhost fica muito lento). Para fazer isso basta digitar o comando ```ipconfig``` no terminal.
 
 <br>
 <p align="center">
@@ -23,7 +24,7 @@ Baixando o repositório você consegue ter acesso ao código. Para executar o pr
 </p>
 <br><br>
 
-- Atualizar no arquivo [```SeriesTools.py```](https://github.com/Gui25Reis/Prova-P1-Calculadora-seno-e-cosseno/blob/main/C%C3%B2digo/SeriesServer/SeriesTools.py) na variável ```URL``` (linha 14) com o seu IPV4.
+- Atualizar a variável ```URL``` nos arquivos [```Client.py```](https://github.com/Gui25Reis/Prova-P1-Calculadora-seno-e-cosseno/blob/main/C%C3%B3digo/Client/Client.py) (linha 23) e [```SeriesTools.py```](https://github.com/Gui25Reis/Prova-P1-Calculadora-seno-e-cosseno/blob/main/C%C3%B2digo/SeriesServer/SeriesTools.py) (linha 14) com o seu IPV4.
 
 <br>
 <p align="center">
@@ -31,7 +32,7 @@ Baixando o repositório você consegue ter acesso ao código. Para executar o pr
 </p>
 <br><br>
 
-- Depois precisa executar (e deixar ligado) os dois server: [```SeriesServer.py```](https://github.com/Gui25Reis/Prova-P1-Calculadora-seno-e-cosseno/blob/main/C%C3%B2digo/SeriesServer/SeriesServer.py) e [```UtilServer.py```](https://github.com/Gui25Reis/Prova-P1-Calculadora-seno-e-cosseno/blob/main/C%C3%B2digo/UtilServer/UtilServer.py)
+- Depois precisa executar (e deixar ligado) os dois server: [```SeriesServer.py```](https://github.com/Gui25Reis/Prova-P1-Calculadora-seno-e-cosseno/blob/main/C%C3%B2digo/SeriesServer/SeriesServer.py) e [```UtilServer.py```](https://github.com/Gui25Reis/Prova-P1-Calculadora-seno-e-cosseno/blob/main/C%C3%B2digo/UtilServer/UtilServer.py).
 
 <br>
 <p align="center">
@@ -39,7 +40,7 @@ Baixando o repositório você consegue ter acesso ao código. Para executar o pr
 </p>
 <br><br>
 
-- Por fim, para poder inserir os dados basta rodar o cliente executando o arquivo [```Main.py```](https://github.com/Gui25Reis/Prova-P1-Calculadora-seno-e-cosseno/blob/main/C%C3%B2digo/Main.py)
+- Por fim, para poder inserir os dados basta rodar o cliente executando o arquivo [```Main.py```](https://github.com/Gui25Reis/Prova-P1-Calculadora-seno-e-cosseno/blob/main/C%C3%B2digo/Main.py).
 
 <br>
 <p align="center">
@@ -49,7 +50,7 @@ Baixando o repositório você consegue ter acesso ao código. Para executar o pr
 
 
 ## Requerimentos
-O programa foi feito em ```python 3.8.5``` com a adição de duas bibliotecas externa. Para instalar basta copiar o código em destaque no seu terminal.
+O programa foi feito em ```python 3.8.5``` com a adição de duas bibliotecas externas. Para instalar basta copiar o código em destaque no seu terminal.
 
 Uma delas é para a Interface Gráfica (GUI) chamada [PyQt5](https://pypi.org/project/PyQt5/).
 
@@ -58,6 +59,9 @@ Uma delas é para a Interface Gráfica (GUI) chamada [PyQt5](https://pypi.org/pr
 A outra é para a conexão via ```get()``` entre os server, utilizando a biblioteca [Requests](https://pypi.org/project/requests/). 
 
     pip install requests
+
+## Documentação
+A documentação do projeto e instruções da prova estão na [wiki](https://github.com/Gui25Reis/Prova-P1-Calculadora-seno-e-cosseno/wiki) do repositório.
 
 
 ## Licença
